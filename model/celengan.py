@@ -29,12 +29,11 @@ class Celengan:
         headers = ["Transaksi Keluar"]
         return tabulate(self._daftarTransaksiKeluar, headers=headers, tablefmt="grid")
 
-
     def get_totalTransaksiMasuk(self):
-        return sum(self._daftarTransaksiMasuk) if self._daftarTransaksiMasuk else Decimal('0')
+        return sum(trans[0] for trans in self._daftarTransaksiMasuk) if self._daftarTransaksiMasuk else Decimal('0')
 
     def get_totalTransaksiKeluar(self):
-        return sum(self._daftarTransaksiKeluar) if self._daftarTransaksiKeluar else Decimal('0')
+        return sum(trans[0] for trans in self._daftarTransaksiKeluar) if self._daftarTransaksiKeluar else Decimal('0')
     
     def get_totalBalance(self):
         totalMasuk = self.get_totalTransaksiMasuk()
