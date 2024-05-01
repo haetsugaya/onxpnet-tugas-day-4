@@ -13,6 +13,8 @@ Move to cloned dir and run it
 cd /onxpnet-tugas-day-4
 python -u main.py
 ```
+<img width="464" alt="image" src="https://res.cloudinary.com/dvcrbperu/image/upload/v1714571597/Screenshot_2024-05-01_at_9.50.38_PM_scnuy1.png">
+
 
 # Using Docker 
 ## Step 1: Pull the Docker Image
@@ -27,3 +29,5 @@ After pulling the image, you can run it using the docker run command.
 ```bash
 docker run -it ghcr.io/haetsugaya/kelas-onxp-python-group5-task4:latest
 ```
+<img width="464" alt="image" src="https://res.cloudinary.com/dvcrbperu/image/upload/v1714572097/Screenshot_2024-05-01_at_10.01.17_PM_cmmmva.png">
+
