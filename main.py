@@ -22,8 +22,10 @@ def get_pilihanUser(options):
                 elif choice == 2:
                     bca.uang_keluar(float(input(Fore.GREEN + "Masukan nominal uang keluar: ")))
                 elif choice == 3:
+                    print(Fore.WHITE + "Total Uang Masuk: " + str(bca.sum_total_uang_masuk()))
                     print(bca.total_uang_masuk())
                 elif choice == 4:
+                    print(Fore.WHITE + "Total Uang Keluar: " + str(bca.sum_total_uang_keluar()))
                     print(bca.total_uang_keluar())
                 elif choice == 5:
                     if bca.total_balance() <= 0:

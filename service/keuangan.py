@@ -22,5 +22,11 @@ def total_uang_masuk():
 def total_uang_keluar():
     return tabungan.get_daftarTransaksiKeluar()
 
+def sum_total_uang_masuk():
+    return tabungan.get_totalTransaksiMasuk()
+
+def sum_total_uang_keluar():
+    return tabungan.get_totalTransaksiKeluar()
+
 def total_balance():
     return tabungan.get_totalBalance()
