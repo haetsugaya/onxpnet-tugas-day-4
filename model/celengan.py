@@ -10,18 +10,25 @@ class Celengan:
     def set_uangMasuk(self, uang: Decimal):
         if not isinstance(uang, Decimal):
             raise TypeError("Hanya menerima jumlah angka decimal")
-        self._daftarTransaksiMasuk.append(uang)
+        self._daftarTransaksiMasuk.append([uang])
 
     def set_uangKeluar(self, uang: Decimal):
         if not isinstance(uang, Decimal):
             raise TypeError("Hanya menerima jumlah angka decimal")
-        self._daftarTransaksiKeluar.append(uang)
+        self._daftarTransaksiKeluar.append([uang])
 
     def get_daftarTransaksiMasuk(self):
-        return tabulate(self._daftarTransaksiMasuk)
-    
+            if not self._daftarTransaksiMasuk:
+                return "Tidak ada transaksi"
+            headers = ["Transaksi Masuk"]
+            return tabulate(self._daftarTransaksiMasuk, headers=headers, tablefmt="grid")
+        
     def get_daftarTransaksiKeluar(self):
-        return tabulate(self._daftarTransaksiKeluar)
+        if not self._daftarTransaksiKeluar:
+            return "Tidak ada transaksi"
+        headers = ["Transaksi Keluar"]
+        return tabulate(self._daftarTransaksiKeluar, headers=headers, tablefmt="grid")
+
 
     def get_totalTransaksiMasuk(self):
         return sum(self._daftarTransaksiMasuk) if self._daftarTransaksiMasuk else Decimal('0')
