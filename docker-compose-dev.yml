@@ -1,9 +1,11 @@
-version: '3'
+version: '3.8'
 services:
-  app:
+  keuangan:
     build: 
       context: .
       dockerfile: Dockerfile.dev
-    image: ghcr.io/haetsugaya/kelas-onxp-python-group5-task4-:latest
+    stdin_open: true  # Keep stdin open
+    tty: true         # Allocate a pseudo-TTY
+    image: ghcr.io/haetsugaya/kelas-onxp-python-group5-task4:latest
     volumes:
       - .:/app
